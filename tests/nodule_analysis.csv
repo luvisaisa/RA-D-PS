@@ -1,0 +1,2 @@
+file_id,nodule_id,z_coordinate,x_coordinate,y_coordinate,coordinate_count,session_type,parse_case,modality,date_service,radiologist_count,avg_confidence,avg_subtlety,avg_obscuration,min_confidence,max_confidence,confidence_range,radiologists,all_confidence_scores
+test_file_001,nodule1,1550.5,123.5,456.7,15,Detailed,Complete_Attributes,,,1,4.0,3.0,,4.0,4.0,0.0,rad_123_1,4.0

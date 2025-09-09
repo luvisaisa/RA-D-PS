@@ -1,14 +1,22 @@
 import sys
 import tkinter as tk
 import openpyxl
+from pathlib import Path
 from openpyxl.styles import PatternFill
 
+# Add src to path for development/testing
+sys.path.insert(0, str(Path(__file__).parent / "src"))
+
 try:
-    from XMLPARSE import NYTXMLGuiApp
-except ImportError as e:
-    print(f"Import error: {e}")
-    print("Make sure NYTXMLGuiApp is defined in XMLPARSE.py and the file is in the same directory.")
-    sys.exit(1)
+    from ra_d_ps.parser import NYTXMLGuiApp
+except ImportError:
+    # Fallback to old import for backward compatibility
+    try:
+        from XMLPARSE import NYTXMLGuiApp
+    except ImportError as e:
+        print(f"Import error: {e}")
+        print("Make sure the ra_d_ps package is installed or XMLPARSE.py is available.")
+        sys.exit(1)
 
 
 def highlight_na_reason(excel_path):

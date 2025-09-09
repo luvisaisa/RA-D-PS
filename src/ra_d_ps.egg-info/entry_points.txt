@@ -1,0 +1,2 @@
+[console_scripts]
+ra-d-ps = ra_d_ps.parser:main

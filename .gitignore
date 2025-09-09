@@ -1,0 +1,47 @@
+# Build directories
+build/
+dist/
+*.app/
+*.spec
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output files
+*.xlsx
+*.db
+*.log
+
+# Large binary files
+*.dylib
+*.pkg
+*.pyz
+
+# Test output
+test_output/
+temp_files/
+# Large binary files
+build/
+dist/
+*.app
+*.pkg
+*.pyz
+*.dylib

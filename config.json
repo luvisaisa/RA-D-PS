@@ -1,0 +1,21 @@
+{
+    "batch_size": 50,
+    "max_memory_mb": 1000,
+    "parallel_processing": true,
+    "max_workers": 4,
+    "enable_individual_tracking": false,
+    "database_pool_size": 5,
+    "enable_database_backup": true,
+    "min_confidence_threshold": 1.0,
+    "max_confidence_threshold": 5.0,
+    "data_completeness_threshold": 0.7,
+    "auto_open_results": true,
+    "show_progress_details": true,
+    "remember_last_directory": true,
+    "default_excel_format": "detailed",
+    "include_debug_info": false,
+    "compress_large_exports": true,
+    "log_level": "INFO",
+    "log_file": "xml_parser.log",
+    "max_log_size_mb": 50
+}

@@ -1,0 +1,14 @@
+{
+  "excel_max_workers": 4,
+  "excel_timeout_seconds": 60,
+  "use_optimized_excel": true,
+  "fill_style_cache_size": 64,
+  "column_cache_enabled": true,
+  "process_large_files_streaming": true,
+  "large_file_threshold_mb": 10,
+  "use_optimized_main": true,
+  "window_width": 500,
+  "window_height": 500,
+  "enable_performance_logging": false,
+  "log_level": "INFO"
+}

@@ -1,0 +1,14 @@
+# Core dependencies
+pandas>=1.3.0
+openpyxl>=3.0.0
+lxml>=4.6.0
+
+# Development dependencies
+pytest>=6.0
+pytest-cov
+black
+flake8
+mypy
+
+# Optional GUI dependencies (usually included with Python)
+# tkinter  # Usually bundled with Python

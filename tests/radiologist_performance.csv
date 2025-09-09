@@ -1,0 +1,2 @@
+radiologist_id,total_ratings,avg_confidence,avg_subtlety,avg_obscuration,min_confidence,max_confidence,high_confidence_count,low_confidence_count,files_reviewed
+rad_123_1,1,4.0,3.0,,4.0,4.0,1,0,1
