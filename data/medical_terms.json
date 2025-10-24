@@ -1,0 +1,409 @@
+{
+  "version": "1.0.0",
+  "description": "Medical terminology dictionary for keyword extraction and normalization in radiology annotation data",
+  "last_updated": "2025-10-19",
+  
+  "synonyms": {
+    "nodule": ["lesion", "mass", "growth", "tumor"],
+    "pulmonary": ["lung", "pneumonic", "pulmonic"],
+    "opacity": ["density", "attenuation", "opacification"],
+    "calcification": ["calcium deposit", "calcified area", "mineralization"],
+    "malignancy": ["cancer", "carcinoma", "malignant tumor", "neoplasm"],
+    "benign": ["non-cancerous", "non-malignant"],
+    "ground glass": ["ggn", "ground-glass nodule", "subsolid"],
+    "solid": ["dense", "consolidated"],
+    "spiculation": ["spiculated", "spiky", "radiating"],
+    "lobulation": ["lobulated", "scalloped"],
+    "pleura": ["pleural", "pleural surface"],
+    "parenchyma": ["lung tissue", "pulmonary tissue"],
+    "mediastinum": ["mediastinal", "middle chest"],
+    "hilum": ["hilar", "lung root"],
+    "lymph node": ["lymphadenopathy", "adenopathy"],
+    "airway": ["bronchus", "bronchi", "bronchial"],
+    "vessel": ["vascular", "blood vessel"],
+    "cavity": ["cavitation", "cavitary"],
+    "emphysema": ["emphysematous", "air trapping"],
+    "fibrosis": ["fibrotic", "scarring"],
+    "atelectasis": ["collapse", "collapsed lung"],
+    "effusion": ["fluid", "pleural fluid"],
+    "pneumothorax": ["collapsed lung", "air in pleural space"],
+    "infiltrate": ["infiltration", "inflammatory changes"],
+    "consolidation": ["consolidated", "airspace disease"]
+  },
+  
+  "abbreviations": {
+    "CT": "computed tomography",
+    "MRI": "magnetic resonance imaging",
+    "PET": "positron emission tomography",
+    "GGO": "ground glass opacity",
+    "GGN": "ground glass nodule",
+    "NSCLC": "non-small cell lung cancer",
+    "SCLC": "small cell lung cancer",
+    "LIDC": "lung image database consortium",
+    "IDRI": "image database resource initiative",
+    "SOB": "shortness of breath",
+    "DOE": "dyspnea on exertion",
+    "CXR": "chest x-ray",
+    "LUL": "left upper lobe",
+    "LLL": "left lower lobe",
+    "RUL": "right upper lobe",
+    "RML": "right middle lobe",
+    "RLL": "right lower lobe",
+    "LAD": "lymphadenopathy",
+    "BAC": "bronchioloalveolar carcinoma",
+    "AIP": "acute interstitial pneumonia",
+    "COPD": "chronic obstructive pulmonary disease",
+    "IPF": "idiopathic pulmonary fibrosis",
+    "TB": "tuberculosis",
+    "PE": "pulmonary embolism",
+    "CHF": "congestive heart failure",
+    "ARDS": "acute respiratory distress syndrome",
+    "HRCT": "high resolution computed tomography"
+  },
+  
+  "multi_word_terms": [
+    "ground glass opacity",
+    "ground glass nodule",
+    "pleural effusion",
+    "pulmonary embolism",
+    "lymph node",
+    "lung nodule",
+    "lung mass",
+    "chest wall",
+    "chest pain",
+    "shortness of breath",
+    "pulmonary fibrosis",
+    "interstitial lung disease",
+    "lung cancer",
+    "perinodular",
+    "intranodular",
+    "radiomic features",
+    "texture analysis",
+    "machine learning",
+    "deep learning",
+    "neural network",
+    "convolutional neural network",
+    "small cell carcinoma",
+    "non-small cell carcinoma",
+    "lung parenchyma",
+    "mediastinal lymph node",
+    "hilar lymphadenopathy",
+    "pleural thickening",
+    "airspace disease",
+    "tree-in-bud",
+    "honeycombing pattern",
+    "crazy paving pattern",
+    "mosaic attenuation",
+    "bronchial wall thickening",
+    "pulmonary hypertension",
+    "pulmonary edema",
+    "lung consolidation",
+    "lobar pneumonia",
+    "aspiration pneumonia",
+    "interstitial pneumonia",
+    "organizing pneumonia",
+    "eosinophilic pneumonia",
+    "fungal infection",
+    "bacterial infection",
+    "viral pneumonia",
+    "mycobacterial infection",
+    "cavitary lesion",
+    "cystic lesion",
+    "solid nodule",
+    "subsolid nodule",
+    "part-solid nodule",
+    "pure ground glass",
+    "mixed ground glass",
+    "spiculated margin",
+    "smooth margin",
+    "irregular margin",
+    "lobulated contour",
+    "spherical shape",
+    "oval shape",
+    "linear opacity",
+    "reticular opacity",
+    "nodular opacity",
+    "alveolar opacity",
+    "interstitial opacity",
+    "peribronchovascular",
+    "subpleural",
+    "perifissural",
+    "juxtapleural",
+    "central location",
+    "peripheral location",
+    "upper lobe",
+    "middle lobe",
+    "lower lobe",
+    "lingular segment",
+    "apical segment",
+    "posterior segment",
+    "anterior segment",
+    "lateral segment",
+    "medial segment",
+    "superior segment",
+    "inferior segment",
+    "right lung",
+    "left lung",
+    "bilateral lungs",
+    "unilateral lung",
+    "lung apex",
+    "lung base",
+    "costophrenic angle",
+    "cardiophrenic angle",
+    "aortic arch",
+    "pulmonary artery",
+    "pulmonary vein",
+    "main bronchus",
+    "lobar bronchus",
+    "segmental bronchus",
+    "subsegmental bronchus",
+    "bronchial tree",
+    "tracheal lumen",
+    "carina bifurcation",
+    "vascular bundle",
+    "bronchovascular bundle",
+    "lymphatic vessel",
+    "intercostal space",
+    "rib fracture",
+    "bone lesion",
+    "soft tissue mass",
+    "calcified granuloma",
+    "calcified nodule",
+    "fat-containing lesion",
+    "air-containing lesion",
+    "fluid-containing lesion",
+    "necrotic center",
+    "hemorrhagic component",
+    "contrast enhancement",
+    "non-enhancing",
+    "homogeneous density",
+    "heterogeneous density",
+    "low attenuation",
+    "high attenuation",
+    "soft tissue density",
+    "fat density",
+    "fluid density",
+    "air density",
+    "calcium density"
+  ],
+  
+  "anatomical_terms": {
+    "lung_regions": [
+      "apex", "base", "hilum", "periphery", "central", "subpleural",
+      "perifissural", "juxtapleural", "peribronchovascular"
+    ],
+    "lobes": [
+      "upper lobe", "middle lobe", "lower lobe", "lingula",
+      "right upper lobe", "right middle lobe", "right lower lobe",
+      "left upper lobe", "left lower lobe"
+    ],
+    "segments": [
+      "apical", "posterior", "anterior", "lateral", "medial",
+      "superior", "inferior", "lingular"
+    ],
+    "airways": [
+      "trachea", "carina", "main bronchus", "lobar bronchus",
+      "segmental bronchus", "subsegmental bronchus", "bronchiole",
+      "terminal bronchiole", "respiratory bronchiole", "alveoli"
+    ],
+    "vasculature": [
+      "pulmonary artery", "pulmonary vein", "aorta", "superior vena cava",
+      "inferior vena cava", "azygos vein", "hemiazygos vein"
+    ],
+    "pleura": [
+      "visceral pleura", "parietal pleura", "pleural space",
+      "pleural fissure", "major fissure", "minor fissure", "oblique fissure",
+      "horizontal fissure"
+    ],
+    "mediastinum": [
+      "anterior mediastinum", "middle mediastinum", "posterior mediastinum",
+      "superior mediastinum", "thymus", "esophagus", "heart", "pericardium"
+    ],
+    "lymph_nodes": [
+      "hilar lymph node", "mediastinal lymph node", "paratracheal node",
+      "subcarinal node", "aortopulmonary window node", "prevascular node",
+      "retrotracheal node", "periesophageal node", "paraesophageal node",
+      "pulmonary ligament node", "intrapulmonary node"
+    ],
+    "chest_wall": [
+      "rib", "sternum", "clavicle", "scapula", "spine", "vertebra",
+      "intercostal space", "intercostal muscle", "diaphragm",
+      "costophrenic angle", "cardiophrenic angle"
+    ]
+  },
+  
+  "characteristic_values": {
+    "subtlety": {
+      "1": ["extremely subtle", "very subtle", "barely visible"],
+      "2": ["moderately subtle", "subtle"],
+      "3": ["fairly subtle", "somewhat subtle"],
+      "4": ["moderately obvious", "fairly obvious"],
+      "5": ["obvious", "very obvious", "extremely obvious"]
+    },
+    "malignancy": {
+      "1": ["highly unlikely malignant", "almost certainly benign"],
+      "2": ["moderately unlikely malignant", "probably benign"],
+      "3": ["indeterminate", "uncertain", "equivocal"],
+      "4": ["moderately suspicious", "probably malignant"],
+      "5": ["highly suspicious", "almost certainly malignant"]
+    },
+    "sphericity": {
+      "1": ["linear", "elongated"],
+      "2": ["ovoid", "oval"],
+      "3": ["round", "spherical"]
+    },
+    "margin": {
+      "1": ["poorly defined", "ill-defined"],
+      "2": ["near poorly defined"],
+      "3": ["medium margin"],
+      "4": ["near sharp", "fairly sharp"],
+      "5": ["sharp", "well-defined"]
+    },
+    "lobulation": {
+      "1": ["no lobulation", "none"],
+      "2": ["near no lobulation"],
+      "3": ["medium lobulation"],
+      "4": ["near marked lobulation"],
+      "5": ["marked lobulation", "highly lobulated"]
+    },
+    "spiculation": {
+      "1": ["no spiculation", "none"],
+      "2": ["near no spiculation"],
+      "3": ["medium spiculation"],
+      "4": ["near marked spiculation"],
+      "5": ["marked spiculation", "highly spiculated"]
+    },
+    "texture": {
+      "1": ["non-solid", "ground glass", "pure ground glass"],
+      "2": ["non-solid"],
+      "3": ["part solid", "mixed", "semi-solid"],
+      "4": ["near solid"],
+      "5": ["solid", "completely solid"]
+    },
+    "calcification": {
+      "1": ["popcorn", "popcorn calcification"],
+      "2": ["laminated", "concentric"],
+      "3": ["solid", "dense"],
+      "4": ["non-central", "eccentric"],
+      "5": ["central", "central calcification"],
+      "6": ["absent", "no calcification"]
+    },
+    "internal_structure": {
+      "1": ["soft tissue", "solid"],
+      "2": ["fluid", "fluid-filled"],
+      "3": ["fat", "fat-containing"],
+      "4": ["air", "air-containing"]
+    }
+  },
+  
+  "diagnostic_terms": {
+    "benign": [
+      "granuloma", "hamartoma", "intrapulmonary lymph node",
+      "scar", "fibrosis", "atelectasis", "inflammatory",
+      "infection", "abscess", "cyst", "bulla", "bleb"
+    ],
+    "malignant": [
+      "adenocarcinoma", "squamous cell carcinoma", "large cell carcinoma",
+      "small cell carcinoma", "carcinoid", "metastasis", "lymphoma",
+      "sarcoma", "mesothelioma"
+    ],
+    "infectious": [
+      "pneumonia", "tuberculosis", "fungal infection", "abscess",
+      "empyema", "aspergillosis", "histoplasmosis", "coccidioidomycosis",
+      "cryptococcosis", "nocardiosis", "actinomycosis"
+    ],
+    "inflammatory": [
+      "sarcoidosis", "organizing pneumonia", "eosinophilic pneumonia",
+      "hypersensitivity pneumonitis", "vasculitis", "granulomatosis"
+    ],
+    "interstitial": [
+      "pulmonary fibrosis", "usual interstitial pneumonia",
+      "non-specific interstitial pneumonia", "cryptogenic organizing pneumonia",
+      "acute interstitial pneumonia", "desquamative interstitial pneumonia",
+      "lymphocytic interstitial pneumonia", "asbestosis", "silicosis"
+    ],
+    "vascular": [
+      "pulmonary embolism", "pulmonary infarction", "pulmonary hypertension",
+      "arteriovenous malformation", "pulmonary artery aneurysm"
+    ],
+    "congenital": [
+      "bronchogenic cyst", "congenital pulmonary airway malformation",
+      "sequestration", "hypoplasia", "agenesis"
+    ]
+  },
+  
+  "modality_terms": {
+    "CT": ["computed tomography", "ct scan", "cat scan"],
+    "MRI": ["magnetic resonance imaging", "mri scan"],
+    "PET": ["positron emission tomography", "pet scan", "pet-ct"],
+    "X-ray": ["radiograph", "chest x-ray", "cxr", "plain film"],
+    "Ultrasound": ["sonography", "ultrasound", "us"],
+    "Fluoroscopy": ["fluoroscopic", "real-time imaging"]
+  },
+  
+  "quality_descriptors": {
+    "size": [
+      "tiny", "small", "moderate", "large", "massive",
+      "microscopic", "macroscopic", "submillimeter", "millimeter", "centimeter"
+    ],
+    "shape": [
+      "round", "oval", "linear", "irregular", "stellate",
+      "polygonal", "triangular", "lobulated", "spiculated"
+    ],
+    "density": [
+      "hypodense", "hyperdense", "isodense", "heterogeneous", "homogeneous",
+      "low density", "high density", "soft tissue density", "fat density",
+      "fluid density", "air density", "calcium density"
+    ],
+    "margin": [
+      "smooth", "irregular", "spiculated", "lobulated", "well-defined",
+      "ill-defined", "sharp", "blurred", "hazy"
+    ],
+    "distribution": [
+      "diffuse", "focal", "multifocal", "patchy", "scattered",
+      "clustered", "random", "perilymphatic", "centrilobular",
+      "subpleural", "peribronchovascular"
+    ],
+    "enhancement": [
+      "enhancing", "non-enhancing", "homogeneous enhancement",
+      "heterogeneous enhancement", "rim enhancement", "central enhancement"
+    ]
+  },
+  
+  "stopwords": [
+    "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for",
+    "of", "with", "by", "from", "as", "is", "was", "are", "were", "been",
+    "be", "have", "has", "had", "do", "does", "did", "will", "would",
+    "should", "can", "could", "may", "might", "must", "shall",
+    "this", "that", "these", "those", "there", "here", "where", "when",
+    "what", "which", "who", "whom", "whose", "why", "how",
+    "not", "no", "yes", "if", "then", "than", "more", "less", "most",
+    "some", "any", "each", "every", "all", "both", "few", "many",
+    "much", "other", "another", "such", "only", "own", "same", "so",
+    "very", "quite", "too", "also", "just", "even", "about", "into",
+    "through", "during", "before", "after", "above", "below", "between",
+    "under", "again", "further", "once", "now", "then", "always", "never",
+    "often", "sometimes", "usually", "rarely", "already", "still", "yet"
+  ],
+  
+  "research_terms": [
+    "radiomics", "texture analysis", "feature extraction",
+    "machine learning", "deep learning", "artificial intelligence",
+    "convolutional neural network", "random forest", "support vector machine",
+    "image segmentation", "region of interest", "volume of interest",
+    "hounsfield unit", "pixel", "voxel", "slice thickness",
+    "reconstruction algorithm", "kernel", "window level", "window width",
+    "lung window", "mediastinal window", "bone window",
+    "axial plane", "coronal plane", "sagittal plane",
+    "maximum intensity projection", "minimum intensity projection",
+    "multiplanar reconstruction", "3D reconstruction", "volume rendering",
+    "annotation", "radiologist", "reader", "observer", "consensus",
+    "inter-observer agreement", "intra-observer agreement", "kappa",
+    "sensitivity", "specificity", "accuracy", "precision", "recall",
+    "positive predictive value", "negative predictive value",
+    "receiver operating characteristic", "area under curve",
+    "true positive", "false positive", "true negative", "false negative",
+    "screening", "detection", "diagnosis", "characterization",
+    "follow-up", "surveillance", "monitoring", "treatment response"
+  ]
+}

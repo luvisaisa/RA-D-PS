@@ -9,7 +9,9 @@ import os
 # Add current directory to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from XMLPARSE import NYTXMLGuiApp
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+from ra_d_ps.gui import NYTXMLGuiApp
 
 def test_signature_popup():
     """Test the updated signature popup"""

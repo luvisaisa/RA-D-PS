@@ -1,0 +1,29 @@
+================================================================================
+XML-COMP DATASET VALIDATION REPORT
+================================================================================
+Generated: 2025-10-19 21:56:40
+Dataset: /Users/isa/Desktop/XML-COMP
+
+📊 VALIDATION SUMMARY
+--------------------------------------------------------------------------------
+Total Files Tested:    475
+Successful:            475 (100.0%)
+Failed:                0
+Total Processing Time: 3.34s
+
+⚡ PERFORMANCE METRICS
+--------------------------------------------------------------------------------
+Average Detection Time: 6.99ms per file
+Minimum Detection Time: 0.41ms
+Maximum Detection Time: 119.36ms
+Throughput:             142.1 files/sec
+
+📋 PARSE CASE DISTRIBUTION
+--------------------------------------------------------------------------------
+LIDC_v2_Standard                161 files ( 33.9%)
+Complete_Attributes             100 files ( 21.1%)
+No_Characteristics               98 files ( 20.6%)
+Minimal_Attributes               90 files ( 18.9%)
+Core_Attributes_Only             26 files (  5.5%)
+
+================================================================================

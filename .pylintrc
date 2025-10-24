@@ -1,0 +1,154 @@
+[MASTER]
+# Ensure pylint can resolve 'src.ra_d_ps.*' imports when run from repo root
+init-hook='import sys, os; repo=os.path.dirname(__file__); src=os.path.join(repo, "src");
+    sys.path.insert(0, repo); sys.path.insert(0, src)'
+
+[MESSAGES CONTROL]
+disable=
+    missing-docstring,
+    too-few-public-methods
+
+[TYPECHECK]
+ignored-modules=pylidc
+[MASTER]
+jobs=1
+persistent=yes
+suggestion-mode=yes
+unsafe-load-any-extension=no
+
+[MESSAGES CONTROL]
+disable=all
+enable=
+    import-error,
+    no-member,
+    no-name-in-module,
+    undefined-variable,
+    used-before-assignment,
+    undefined-loop-variable,
+    redefined-outer-name,
+    redefined-builtin,
+    function-redefined,
+    duplicate-key,
+    unreachable,
+    pointless-statement,
+    pointless-string-statement,
+    expression-not-assigned,
+    unnecessary-pass,
+    dangerous-default-value,
+    arguments-differ,
+    signature-differs,
+    abstract-class-instantiated,
+    bad-super-call,
+    super-init-not-called,
+    non-parent-init-called,
+    access-member-before-definition,
+    method-hidden,
+    assigning-non-slot,
+    invalid-slots-object,
+    inherit-non-class,
+    inconsistent-mro,
+    duplicate-bases,
+    non-iterator-returned,
+    unexpected-special-method-signature,
+    invalid-length-returned,
+    assignment-from-no-return,
+    assignment-from-none,
+    not-callable,
+    redundant-keyword-arg,
+    keyword-arg-before-vararg,
+    non-str-assignment-to-dunder-name,
+    invalid-metaclass,
+    catching-non-exception,
+    bad-exception-context,
+    notimplemented-raised,
+    raising-bad-type,
+    raising-non-exception,
+    misplaced-bare-raise,
+    duplicate-except,
+    nonlocal-and-global,
+    used-prior-global-declaration,
+    undefined-all-variable,
+    invalid-all-object,
+    no-self-argument,
+    method-check-failed,
+    assigning-non-slot,
+    invalid-slots,
+    missing-kwoa,
+    no-value-for-parameter,
+    too-many-function-args,
+    unexpected-keyword-arg,
+    dict-iter-missing-items
+
+[REPORTS]
+output-format=text
+reports=no
+score=no
+
+[REFACTORING]
+max-nested-blocks=5
+never-returning-functions=sys.exit
+
+[BASIC]
+good-names=i,j,k,ex,Run,_
+include-naming-hint=no
+
+[FORMAT]
+ignore-long-lines=.*
+max-line-length=1000
+max-module-lines=10000
+
+[LOGGING]
+logging-format-style=old
+logging-modules=logging
+
+[MISCELLANEOUS]
+notes=
+
+[SIMILARITIES]
+ignore-comments=yes
+ignore-docstrings=yes
+ignore-imports=no
+min-similarity-lines=4
+
+[SPELLING]
+spelling-dict=
+
+[TYPECHECK]
+contextmanager-decorators=contextlib.contextmanager
+generated-members=
+ignore-mixin-members=yes
+ignored-classes=optparse.Values,thread._local,_thread._local
+ignored-modules=
+missing-member-hint=yes
+missing-member-hint-distance=1
+missing-member-max-choices=1
+
+[VARIABLES]
+additional-builtins=
+allow-global-unused-variables=yes
+callbacks=cb_,_cb
+dummy-variables-rgx=_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_
+ignored-argument-names=_.*|^ignored_|^unused_
+init-import=no
+redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
+
+[CLASSES]
+defining-attr-methods=__init__,__new__,setUp,__post_init__
+exclude-protected=_asdict,_fields,_replace,_source,_make
+valid-classmethod-first-arg=cls
+valid-metaclass-classmethod-first-arg=cls
+
+[DESIGN]
+max-args=100
+max-attributes=100
+max-bool-expr=100
+max-branches=100
+max-locals=100
+max-parents=100
+max-public-methods=100
+max-returns=100
+max-statements=100
+min-public-methods=0
+
+[EXCEPTIONS]
+overgeneral-exceptions=builtins.Exception

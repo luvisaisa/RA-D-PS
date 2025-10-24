@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """
-Simple GUI test for XMLPARSE.py
+Simple GUI test for the RA-D-PS parser
 Tests that the GUI can start and display correctly
 """
 
 import sys
 import tkinter as tk
-from XMLPARSE import NYTXMLGuiApp
+from pathlib import Path
+
+# Add src to path
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+from ra_d_ps.gui import NYTXMLGuiApp
 
 def test_gui():
     """Test GUI startup and basic functionality"""

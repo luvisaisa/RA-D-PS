@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """
-Quick test to verify the GUI has the new RA-D-PS export button
+GUI Integration Test for RA-D-PS Parser
 """
 
-import sys
-import os
-sys.path.append('.')
-
 import tkinter as tk
-from XMLPARSE import NYTXMLGuiApp
+import os
+import sys
+from pathlib import Path
+
+# Add src to path
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+from ra_d_ps.gui import NYTXMLGuiApp
 
 def test_gui_buttons():
     """Test that the GUI has the new RA-D-PS export button"""
@@ -26,33 +28,56 @@ def test_gui_buttons():
         
         print("✅ GUI app created successfully")
         
-        # Check if the export method exists
-        if hasattr(app, 'export_ra_d_ps_excel'):
-            print("✅ export_ra_d_ps_excel method found")
-        else:
-            print("❌ export_ra_d_ps_excel method missing")
+        # Get all children widgets from the app
+        widgets = app.master.winfo_children()
+        print(f"📋 Found {len(widgets)} top-level widgets")
         
-        # Check if the convert function exists
+        # Check if the app has the expected buttons
+        has_export_button = False
+        has_sqlite_button = False
+        
+        def check_widgets(widget):
+            nonlocal has_export_button, has_sqlite_button
+            if isinstance(widget, tk.Button):
+                text = widget.cget('text')
+                if 'Export to Excel' in text:
+                    has_export_button = True
+                    print(f"✅ Found export button: '{text}'")
+                elif 'SQLite' in text:
+                    has_sqlite_button = True
+                    print(f"✅ Found SQLite button: '{text}'")
+            
+            # Recursively check children
+            for child in widget.winfo_children():
+                check_widgets(child)
+        
+        # Check all widgets in the main frame
+        for widget in widgets:
+            check_widgets(widget)
+        
+        # Try importing the export functions to verify they exist
         try:
-            from XMLPARSE import convert_parsed_data_to_ra_d_ps_format, export_excel
-            print("✅ RA-D-PS functions imported successfully")
+            from ra_d_ps.parser import convert_parsed_data_to_ra_d_ps_format, export_excel
+            print("✅ Export functions imported successfully")
         except ImportError as e:
-            print(f"❌ RA-D-PS functions import failed: {e}")
+            print(f"❌ Failed to import export functions: {e}")
         
-        print("\n🎯 INTEGRATION STATUS:")
-        print("  ✓ GUI app loads without errors")
-        print("  ✓ New export method added to GUI class") 
-        print("  ✓ RA-D-PS export functions available")
-        print("  ✓ Ready for user testing")
+        print("=" * 40)
+        print(f"Export button found: {'✅' if has_export_button else '❌'}")
+        print(f"SQLite button found: {'✅' if has_sqlite_button else '❌'}")
         
+        # Clean up
         root.destroy()
-        return True
+        
+        return has_export_button
         
     except Exception as e:
-        print(f"❌ GUI test failed: {e}")
-        import traceback
-        traceback.print_exc()
+        print(f"❌ Error during GUI test: {e}")
         return False
 
 if __name__ == "__main__":
-    test_gui_buttons()
+    success = test_gui_buttons()
+    if success:
+        print("\n🎉 GUI integration test PASSED")
+    else:
+        print("\n💥 GUI integration test FAILED")

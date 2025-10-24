@@ -30,6 +30,15 @@ Thumbs.db
 *.db
 *.log
 
+# Example output directories
+examples/output/
+examples/batch_output/
+examples/*.xlsx
+examples/*.db
+
+# Configuration files (keep templates)
+configs/config.json
+
 # Large binary files
 *.dylib
 *.pkg

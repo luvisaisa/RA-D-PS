@@ -3,12 +3,33 @@ pandas>=1.3.0
 openpyxl>=3.0.0
 lxml>=4.6.0
 
+# Schema-agnostic system dependencies
+pydantic>=2.0.0
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# PostgreSQL dependencies
+psycopg2-binary>=2.9.9
+SQLAlchemy>=2.0.0
+alembic>=1.12.0
+
+# Additional utilities
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+numpy>=1.21.0  # Required by pylidc
+
 # Development dependencies
 pytest>=6.0
 pytest-cov
+pytest-asyncio>=0.21.0
 black
 flake8
 mypy
+httpx>=0.25.0  # For testing FastAPI endpoints
+
+# Optional dependencies for specific data sources
+pylidc>=0.2.3  # For LIDC-IDRI dataset integration
 
 # Optional GUI dependencies (usually included with Python)
 # tkinter  # Usually bundled with Python

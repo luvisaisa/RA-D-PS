@@ -1,0 +1,48 @@
+================================================================================
+XML-COMP DATASET VALIDATION REPORT
+================================================================================
+Generated: 2025-10-19 21:55:57
+Dataset: /Users/isa/Desktop/XML-COMP
+
+📊 VALIDATION SUMMARY
+--------------------------------------------------------------------------------
+Total Files Tested:    0
+Successful:            0 (0.0%)
+Failed:                0
+Total Processing Time: 0.00s
+
+❌ ERRORS DETECTED
+--------------------------------------------------------------------------------
+1. 158.xml
+   AttributeError: 'XMLStructureDetector' object has no attribute 'detect_parse_case'
+
+2. 159.xml
+   AttributeError: 'XMLStructureDetector' object has no attribute 'detect_parse_case'
+
+3. 160.xml
+   AttributeError: 'XMLStructureDetector' object has no attribute 'detect_parse_case'
+
+4. 161.xml
+   AttributeError: 'XMLStructureDetector' object has no attribute 'detect_parse_case'
+
+5. 162.xml
+   AttributeError: 'XMLStructureDetector' object has no attribute 'detect_parse_case'
+
+6. 163.xml
+   AttributeError: 'XMLStructureDetector' object has no attribute 'detect_parse_case'
+
+7. 164.xml
+   AttributeError: 'XMLStructureDetector' object has no attribute 'detect_parse_case'
+
+8. 165.xml
+   AttributeError: 'XMLStructureDetector' object has no attribute 'detect_parse_case'
+
+9. 166.xml
+   AttributeError: 'XMLStructureDetector' object has no attribute 'detect_parse_case'
+
+10. 167.xml
+   AttributeError: 'XMLStructureDetector' object has no attribute 'detect_parse_case'
+
+... and 465 more errors
+
+================================================================================
