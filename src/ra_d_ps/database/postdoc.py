@@ -74,7 +74,7 @@ def get_async_engine() -> AsyncEngine:
     return create_async_engine(conn, **kwargs)
 
 
-def make_sync_session_factory(**session_kwargs):
+def make_sync_session_factory(**session_kwargs) -> sessionmaker:
     """Return a sync `sessionmaker` bound to the sync engine."""
     engine = get_sync_engine()
     return sessionmaker(bind=engine, expire_on_commit=False, **session_kwargs)
