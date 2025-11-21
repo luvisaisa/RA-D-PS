@@ -92,7 +92,7 @@ RA-D-PS/
 │   │   └── pylidc_adapter.py # LIDC-IDRI dataset integration
 │   │
 │   ├── validation/           # Data validation modules
-│   │   └── data_valid        # Validation utilities (placeholder)
+│   │   └── data_validator.py # Validation utilities (placeholder)
 │   │
 │   └── profiles/             # Profile storage directory
 │
@@ -857,7 +857,7 @@ git push -u origin feature/new-parser
 gh pr create --title "Add JSON parser" --body "Implements JSON parsing support"
 
 # Or push to specific branch (for Claude Code)
-git push -u origin claude/claude-md-mi85stdnzbw6scnh-01PiGWWdBSV9FpCb1EFCJkg2
+git push -u origin claude/feature-description
 ```
 
 ---
@@ -1233,7 +1233,7 @@ if not is_valid:
 - **scripts/launch_gui.py**: Launch GUI application
 - **scripts/setup_database.py**: Database setup automation
 - **scripts/test_detection.py**: Test XML structure detection
-- **scripts/validate_xml_comp_dataset.py**: Validate XML dataset
+- **scripts/validate_xml_comprehensive_dataset.py**: Validate XML dataset
 
 ### External References
 
@@ -1302,8 +1302,6 @@ make docker-logs        # View container logs
 
 ## 🤝 Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
-
 **For AI Assistants**: When making contributions:
 1. Create feature branch from `main`
 2. Make changes following this guide
@@ -1317,7 +1315,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 ## 📄 License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 
