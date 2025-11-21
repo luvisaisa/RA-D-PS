@@ -12,6 +12,7 @@ This module intentionally keeps a lightweight surface so parser code can call
 
 from __future__ import annotations
 
+import threading
 from typing import Optional
 
 from sqlalchemy import create_engine
@@ -30,6 +31,7 @@ config: DatabaseConfig = db_config
 # Engines are created once and reused across session factory calls.
 _sync_engine: Optional[Engine] = None
 _async_engine: Optional[AsyncEngine] = None
+_engine_lock = threading.Lock()  # Thread-safe engine creation
 
 
 def init_db(env_path: Optional[str] = None) -> DatabaseConfig:
@@ -72,13 +74,16 @@ def get_sync_engine() -> Engine:
     """Create and return a synchronous SQLAlchemy Engine using the config.
 
     The engine is cached at module level and reused across calls to prevent
-    resource exhaustion from creating multiple connection pools.
+    resource exhaustion from creating multiple connection pools. Thread-safe.
     """
     global _sync_engine
     if _sync_engine is None:
-        conn = get_connection_string(async_driver=False)
-        kwargs = get_engine_kwargs()
-        _sync_engine = create_engine(conn, **kwargs)
+        with _engine_lock:
+            # Double-check pattern to prevent race conditions
+            if _sync_engine is None:
+                conn = get_connection_string(async_driver=False)
+                kwargs = get_engine_kwargs()
+                _sync_engine = create_engine(conn, **kwargs)
     return _sync_engine
 
 
@@ -86,14 +91,17 @@ def get_async_engine() -> AsyncEngine:
     """Create and return an asynchronous SQLAlchemy AsyncEngine using config.
 
     The engine is cached at module level and reused across calls to prevent
-    resource exhaustion from creating multiple connection pools.
+    resource exhaustion from creating multiple connection pools. Thread-safe.
     """
     global _async_engine
     if _async_engine is None:
-        conn = get_connection_string(async_driver=True)
-        kwargs = get_engine_kwargs()
-        # SQLAlchemy async engines accept the same general kwargs for pool
-        _async_engine = create_async_engine(conn, **kwargs)
+        with _engine_lock:
+            # Double-check pattern to prevent race conditions
+            if _async_engine is None:
+                conn = get_connection_string(async_driver=True)
+                kwargs = get_engine_kwargs()
+                # SQLAlchemy async engines accept the same general kwargs for pool
+                _async_engine = create_async_engine(conn, **kwargs)
     return _async_engine
 
 
