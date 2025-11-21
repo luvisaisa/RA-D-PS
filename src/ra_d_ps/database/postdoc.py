@@ -19,22 +19,15 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncEngine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .db_config import DatabaseConfig, PostgreSQLConfig, db_config
+from .db_config import DatabaseConfig, db_config
 
 # Public module-level configuration instance. Call `init_db()` to reload from
 # environment if needed; by default it uses the already-loaded `db_config`.
 config: DatabaseConfig = db_config
 
 
-def init_db(env_path: Optional[str] = None) -> DatabaseConfig:
+def init_db() -> DatabaseConfig:
     """Re-load database configuration and return it.
-
-    Args:
-        env_path: Optional path to a .env file. If provided, it will be loaded
-                  by the caller before this function is called (the project
-                  already uses python-dotenv in `db_config`), so this is kept
-                  for API symmetry.
-
     Returns:
         The initialized `DatabaseConfig` instance.
     """
@@ -80,7 +73,7 @@ def make_sync_session_factory(**session_kwargs) -> sessionmaker:
     return sessionmaker(bind=engine, expire_on_commit=False, **session_kwargs)
 
 
-def make_async_session_factory(**session_kwargs):
+def make_async_session_factory(**session_kwargs) -> sessionmaker:
     """Return an async `sessionmaker` producing `AsyncSession` instances."""
     engine = get_async_engine()
     return sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False, **session_kwargs)
