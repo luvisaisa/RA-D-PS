@@ -81,6 +81,7 @@ prs are rejected if lint/type/test fail. keep changes small and focused
   /scripts        setup_dev.sh, maintenance helpers
   /docs           readme extras, adr, debugging.md, api notes
   /examples       sample xmls and expected outputs for tests
+  /instructions    contribution and coding guidelines
   makefile
   requirements.txt
   readme.md
